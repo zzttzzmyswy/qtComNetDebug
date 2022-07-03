@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1089</width>
+    <height>614</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>串口调试助手</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="png.qrc">
+    <normaloff>:/png/tool.png</normaloff>:/png/tool.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tabCom">
+       <attribute name="title">
+        <string>串口调试工具</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QSplitter" name="splitter_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QSplitter" name="splitter_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <widget class="QGroupBox" name="groupBoxInfo">
+            <property name="title">
+             <string>串口信息配置</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <layout class="QFormLayout" name="formLayout">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label">
+                 <property name="text">
+                  <string>串口号:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QComboBox" name="comboBoxComName">
+                 <property name="editable">
+                  <bool>true</bool>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>Customize</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>比特率:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="comboBoxBitNum">
+                 <property name="currentText">
+                  <string notr="true">1200</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>1200</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>2400</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>4800</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>9600</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>19200</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>34800</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>57600</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>96000</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>115200</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Customize</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_3">
+                 <property name="text">
+                  <string>校验位:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QComboBox" name="comboBoxCheckBit"/>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_7">
+                 <property name="text">
+                  <string>数据位:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QComboBox" name="comboBoxDataBit">
+                 <property name="currentText">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_4">
+                 <property name="text">
+                  <string>停止位:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QComboBox" name="comboBoxStopBit"/>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_5">
+                 <property name="text">
+                  <string>流控制:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QComboBox" name="comboBoxFlowControl"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonScanCom">
+               <property name="text">
+                <string>扫描串口</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonConnect">
+               <property name="text">
+                <string>打开连接</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QGroupBox" name="groupBoxCtrl">
+            <property name="title">
+             <string>控制区域</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <item>
+                <widget class="QPushButton" name="pushButtonSendData">
+                 <property name="text">
+                  <string>发送数据</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkBoxEnter">
+                 <property name="text">
+                  <string>发送自动换行</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonClearData">
+               <property name="text">
+                <string>清空接收数据</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLabel" name="label_6">
+                 <property name="text">
+                  <string>数据显示格式:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="comboBoxDataFormat"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <item>
+                <widget class="QLabel" name="label_9">
+                 <property name="text">
+                  <string>数据发送格式:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="comboBoxSendDataFormat"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QCheckBox" name="checkBoxSendTime">
+                 <property name="text">
+                  <string>重复发送(s)</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="spinBoxSendTime"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <widget class="QLabel" name="label_8">
+                 <property name="text">
+                  <string>串口信息判定时间(ms):</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="spinBoxScanTime">
+                 <property name="minimum">
+                  <number>5</number>
+                 </property>
+                 <property name="maximum">
+                  <number>1000</number>
+                 </property>
+                 <property name="value">
+                  <number>20</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QSplitter" name="splitter">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <widget class="QGroupBox" name="groupBoxRecive">
+            <property name="title">
+             <string>数据接受区</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="0">
+              <widget class="QTextEdit" name="textEditRecive">
+               <property name="undoRedoEnabled">
+                <bool>true</bool>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QGroupBox" name="groupBoxSend">
+            <property name="title">
+             <string>数据发送区</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="0" column="0">
+              <widget class="QTextEdit" name="textEditSend"/>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabNet">
+       <attribute name="title">
+        <string>TCP/IP调试工具</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="title">
+             <string>Client</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_12">
+             <item row="0" column="0">
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <layout class="QGridLayout" name="gridLayout_11">
+                 <item row="0" column="0" rowspan="2">
+                  <layout class="QFormLayout" name="formLayout_3">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_13">
+                     <property name="text">
+                      <string>连接地址:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QComboBox" name="comboBoxNetClientAddress"/>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label_14">
+                     <property name="text">
+                      <string>服务类型:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QComboBox" name="comboBoxNetClientType"/>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="label_15">
+                     <property name="text">
+                      <string>端口号:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QSpinBox" name="spinBoxNetClientPort">
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="maximum">
+                      <number>65535</number>
+                     </property>
+                     <property name="value">
+                      <number>18085</number>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QPushButton" name="pushButtonClientTogger">
+                   <property name="text">
+                    <string>打开连接</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QPushButton" name="pushButtonClientSendData">
+                   <property name="text">
+                    <string>发送数据</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QSplitter" name="splitter_5">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <widget class="QGroupBox" name="groupBox_5">
+                  <property name="title">
+                   <string>数据接收区</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_8">
+                   <item row="0" column="0">
+                    <widget class="QTextEdit" name="textEditNetClientR">
+                     <property name="readOnly">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QGroupBox" name="groupBox_6">
+                  <property name="title">
+                   <string>数据发送区</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_9">
+                   <item row="0" column="0">
+                    <widget class="QTextEdit" name="textEditNetClientT"/>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Server</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <layout class="QFormLayout" name="formLayout_2">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_10">
+                 <property name="text">
+                  <string>监听地址:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QComboBox" name="comboBoxNetServerAddress"/>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_11">
+                 <property name="text">
+                  <string>服务类型:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="comboBoxNetServerType"/>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_12">
+                 <property name="text">
+                  <string>端口号:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QSpinBox" name="spinBoxNetServerPort">
+                 <property name="minimum">
+                  <number>1</number>
+                 </property>
+                 <property name="maximum">
+                  <number>65535</number>
+                 </property>
+                 <property name="value">
+                  <number>18085</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <widget class="QPushButton" name="pushButtonNetServerTogger">
+                 <property name="text">
+                  <string>开启监听</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButtonNetServerScanIp">
+                 <property name="text">
+                  <string>刷新地址</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButtonNetServerSendData">
+                 <property name="text">
+                  <string>发送数据</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QSplitter" name="splitter_4">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="title">
+               <string>数据接收区</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_6">
+               <item row="0" column="0">
+                <widget class="QTextEdit" name="textEditNetServerR">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QGroupBox" name="groupBox_4">
+              <property name="title">
+               <string>数据发送区</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_7">
+               <item row="0" column="0">
+                <widget class="QTextEdit" name="textEditNetServerT"/>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="png.qrc"/>
+ </resources>
+ <connections/>
+</ui>
