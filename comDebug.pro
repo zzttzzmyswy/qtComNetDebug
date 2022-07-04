@@ -22,6 +22,8 @@ FORMS += \
 QT += serialport
 # 添加网络支持
 QT += network widgets
+# 编译utf-8编码代码文件
+QMAKE_CXXFLAGS += /utf-8
 
 TRANSLATIONS += \
     comDebug_yue_CN.ts

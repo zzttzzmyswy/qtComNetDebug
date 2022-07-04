@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -20,6 +20,7 @@
 #include <QDebug>
 #include <QtMath>
 #include <QString>
+#include <QAbstractSocket>
 
 QT_BEGIN_NAMESPACE
 namespace Ui
