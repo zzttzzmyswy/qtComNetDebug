@@ -131,6 +131,11 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
         serial.close();
+        if (netTcpServerConnection)
+        {
+          netTcpServerConnection->close();
+          netTcpServerConnection->deleteLater();
+        }
         netTcpServer.close();
         netTcpClient.close();
         delete ui;
